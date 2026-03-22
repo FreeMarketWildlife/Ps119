@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ps119 Quiet Time</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero fade-up">
+        <div class="hero-copy">
+          <p class="eyebrow">Psalm 119 quiet time</p>
+          <h1>Study slowly. Pray honestly. Return often.</h1>
+          <p class="hero-text">
+            Move through the 22 stanzas of Psalm 119 with a calm rhythm for
+            reflection, journaling, and prayer. Bring your preferred Bible
+            translation and let this app hold the shape of your time.
+          </p>
+          <div class="hero-actions">
+            <button id="jumpToToday" class="button button-primary" type="button">
+              Open today's stanza
+            </button>
+            <button id="nextSection" class="button button-secondary" type="button">
+              Next stanza
+            </button>
+          </div>
+        </div>
+
+        <aside class="today-card">
+          <p class="card-label">Today's suggested focus</p>
+          <h2 id="todayTitle">Aleph</h2>
+          <p id="todayTheme" class="today-theme"></p>
+          <p id="todayVerseRange" class="today-range"></p>
+          <p id="todaySummary" class="today-summary"></p>
+        </aside>
+      </header>
+
+      <main class="dashboard">
+        <section class="card fade-up" aria-labelledby="section-nav-heading">
+          <div class="card-heading">
+            <p class="card-label">Stanza map</p>
+            <h2 id="section-nav-heading">Walk Psalm 119 in 22 movements</h2>
+            <p class="card-copy">
+              Each stanza covers eight verses. Revisit them as often as you
+              need, not as fast as you can.
+            </p>
+          </div>
+
+          <div id="progressCopy" class="progress-copy"></div>
+          <div class="progress-track" aria-hidden="true">
+            <div id="progressBar" class="progress-bar"></div>
+          </div>
+
+          <div id="sectionList" class="section-list" aria-label="Psalm 119 stanzas"></div>
+        </section>
+
+        <section class="card feature-card fade-up" aria-labelledby="study-heading">
+          <div class="feature-header">
+            <div>
+              <p id="selectedRange" class="card-label"></p>
+              <h2 id="study-heading">Aleph</h2>
+              <p id="selectedTheme" class="feature-theme"></p>
+            </div>
+            <button id="toggleCompleted" class="button button-secondary" type="button">
+              Mark as prayed through
+            </button>
+          </div>
+
+          <div class="feature-grid">
+            <article class="study-block">
+              <h3>Focus</h3>
+              <p id="selectedFocus"></p>
+            </article>
+            <article class="study-block">
+              <h3>Prayer</h3>
+              <p id="selectedPrayer"></p>
+            </article>
+            <article class="study-block">
+              <h3>Practice</h3>
+              <p id="selectedPractice"></p>
+            </article>
+          </div>
+
+          <section aria-labelledby="prompt-heading">
+            <div class="prompt-heading">
+              <p class="card-label">Reflection prompts</p>
+              <h3 id="prompt-heading">Questions for a quiet, attentive reading</h3>
+            </div>
+            <div id="promptList" class="prompt-list"></div>
+          </section>
+        </section>
+
+        <section class="card journal-card fade-up" aria-labelledby="journal-heading">
+          <div class="card-heading">
+            <p class="card-label">Journal</p>
+            <h2 id="journal-heading">Keep what God is surfacing close</h2>
+            <p class="card-copy">
+              Notes save in this browser on this Mac. They are private to this
+              device unless we later add syncing.
+            </p>
+          </div>
+
+          <label class="field">
+            <span>Today's intention</span>
+            <input
+              id="intentionInput"
+              type="text"
+              placeholder="What do you want to bring into this quiet time?"
+            />
+          </label>
+
+          <label class="field">
+            <span>Reflection notes for this stanza</span>
+            <textarea
+              id="notesInput"
+              rows="10"
+              placeholder="What stood out, where were you challenged, and how will you respond?"
+            ></textarea>
+          </label>
+
+          <div class="journal-actions">
+            <button id="clearNote" class="button button-secondary" type="button">
+              Clear this note
+            </button>
+            <p id="saveStatus" class="save-status">Saved locally in your browser</p>
+          </div>
+
+          <section class="timer-panel" aria-labelledby="timer-heading">
+            <div class="timer-header">
+              <div>
+                <p class="card-label">Quiet timer</p>
+                <h3 id="timer-heading">Give the moment a little room</h3>
+              </div>
+              <div id="timerDisplay" class="timer-display" aria-live="polite">10:00</div>
+            </div>
+
+            <div class="timer-presets" role="group" aria-label="Timer presets">
+              <button class="button timer-preset is-active" data-minutes="10" type="button">
+                10 min
+              </button>
+              <button class="button timer-preset" data-minutes="15" type="button">
+                15 min
+              </button>
+              <button class="button timer-preset" data-minutes="20" type="button">
+                20 min
+              </button>
+            </div>
+
+            <div class="timer-actions">
+              <button id="startPauseTimer" class="button button-primary" type="button">
+                Start timer
+              </button>
+              <button id="resetTimer" class="button button-secondary" type="button">
+                Reset
+              </button>
+            </div>
+
+            <p id="timerStatus" class="timer-status">
+              Choose a length and settle in.
+            </p>
+          </section>
+        </section>
+      </main>
+
+      <footer class="footer-note fade-up">
+        Psalm 119 is long on purpose. This app is built to help you linger, not
+        rush.
+      </footer>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
